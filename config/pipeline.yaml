@@ -1,0 +1,27 @@
+# 流水线全局参数
+# 各阶段实现通过 src/ad_3dgs/utils/config.py 加载此文件
+
+pipeline:
+  # Stage 3/4 渲染与合成：每批渲染帧数（显存用量控制）
+  chunk_size: 50
+
+  # Stage 1 Timeline 构建：多路相机同步窗口（毫秒）
+  # 在 ±sync_window_ms/2 范围内的其他路相机帧归入同一 TimelineEntry
+  sync_window_ms: 50
+
+  # 6 路相机图像 topic（nuscenes2mcap 产出，有序）
+  camera_topics:
+    - /CAM_FRONT/image_rect_compressed
+    - /CAM_FRONT_LEFT/image_rect_compressed
+    - /CAM_FRONT_RIGHT/image_rect_compressed
+    - /CAM_BACK/image_rect_compressed
+    - /CAM_BACK_LEFT/image_rect_compressed
+    - /CAM_BACK_RIGHT/image_rect_compressed
+
+  # 各 Stage 开关（true=启用，false=跳过）
+  stages:
+    stage1_read:    true
+    stage2_recon:   true
+    stage3_render:  true
+    stage4_compose: true
+    stage5_write:   true

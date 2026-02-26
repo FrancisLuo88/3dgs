@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ad_3dgs"
+version = "0.1.0"
+description = "自动驾驶合成数据工厂：MCAP → 3DGS → 雨夜重渲染 + 虚拟车 → 时间戳对齐输出 MCAP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcap>=1.3.0",
+    "mcap-protobuf-support>=0.5.1",
+    "rosbags>=0.11.0",
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ad_3dgs*"]

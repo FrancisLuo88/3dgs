@@ -1,0 +1,25 @@
+# 自动驾驶合成数据工厂 — conda 环境（Phase 0.3）
+# 用于本项目 Python 代码；ROS 单独在系统安装，不在此环境。
+name: 3dgs
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pyyaml
+  - pip:
+    # Phase 1：MCAP 读写（nuscenes2mcap Foxglove protobuf profile）
+    - mcap-protobuf-support>=0.5.1
+    # protobuf 须 >=4.25（mcap-protobuf-support 需要 GetMessageClass）
+    # 且 <5（与 nerfstudio 1.1.x 兼容）
+    - "protobuf>=4.25,<5"
+    # Phase 1：ROS Bag 辅助工具（纯 Python，无需本机 ROS）
+    - rosbags>=0.11.0
+    # Phase 2：3DGS 重建框架
+    - nerfstudio>=1.1.0
+    # numpy 须 >=2.0（PyTorch 2.10+ 针对 numpy 2.x 编译，1.x 有 from_numpy 类型错误）
+    - "numpy>=2.0,<3"
+    # scipy 须 >=1.14（scipy 1.14+ 支持 numpy 2.x 的二进制接口）
+    - "scipy>=1.14,<1.16"
