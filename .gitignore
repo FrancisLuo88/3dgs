@@ -33,3 +33,7 @@ venv/
 *.pth
 *.ckpt
 *.ply
+
+data/drivestudio_nuscenes/
+data/scenes/scene-0061_s0_v12/
+drivestudio/
