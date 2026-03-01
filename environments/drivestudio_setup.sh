@@ -46,21 +46,26 @@ fi
 
 conda activate drivestudio
 
+export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+
 echo "  Installing requirements..."
-# pip install numpy==1.23.5 scipy
-# pip install chumpy --no-build-isolation
+pip install numpy==1.23.5 scipy
+pip install chumpy --no-build-isolation
 
-# pip install -r requirements.txt
-# pip install nuscenes-devkit  # required for NuScenes preprocessing
+pip install -r requirements.txt
+pip install nuscenes-devkit  # required for NuScenes preprocessing
 
-# echo "  Installing gsplat v1.3.0..."
-# MAX_JOBS=2 pip install "git+https://github.com/nerfstudio-project/gsplat.git@v1.3.0" --no-build-isolation
+echo "  Installing gsplat v1.3.0..."
+MAX_JOBS=2 pip install "git+https://github.com/nerfstudio-project/gsplat.git@v1.3.0" --no-build-isolation
 
-# echo "  Installing pytorch3d..."
-# MAX_JOBS=2 pip install "git+https://github.com/facebookresearch/pytorch3d.git" --no-build-isolation
+echo "  Installing pytorch3d..."
+MAX_JOBS=2 pip install "git+https://github.com/facebookresearch/pytorch3d.git" --no-build-isolation
 
-# echo "  Installing nvdiffrast..."
-# pip install "git+https://github.com/NVlabs/nvdiffrast" --no-build-isolation
+echo "  Installing nvdiffrast..."
+pip install "git+https://github.com/NVlabs/nvdiffrast" --no-build-isolation
 
 echo "  Installing SMPL-X..."
 cd $DRIVESTUDIO_DIR/third_party/smplx && pip install -e . && cd $DRIVESTUDIO_DIR

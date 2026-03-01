@@ -10,6 +10,14 @@ data/intermediate/**/*
 !data/intermediate/stage2_3dgs/.gitkeep
 !data/intermediate/stage3_rendered/.gitkeep
 !data/intermediate/stage4_composite/.gitkeep
+data/drivestudio_nuscenes/
+data/scenes/scene-0061_s0_v12/
+drivestudio/
+data/smpl_data
+data/smpl_data_v12/
+
+.cursor/
+
 
 # Python
 __pycache__/
@@ -34,6 +42,4 @@ venv/
 *.ckpt
 *.ply
 
-data/drivestudio_nuscenes/
-data/scenes/scene-0061_s0_v12/
-drivestudio/
+

@@ -9,7 +9,7 @@ set -e
 
 WORKSPACE=/home/luosx/3dgs
 DRIVESTUDIO_DIR=$WORKSPACE/drivestudio
-NUSCENES_PROCESSED=$WORKSPACE/data/drivestudio_nuscenes/processed_10Hz
+NUSCENES_PROCESSED=$WORKSPACE/data/drivestudio_nuscenes/processed_10Hz_10Hz/mini/mini
 
 eval "$(conda shell.bash hook)"
 conda activate drivestudio
@@ -37,7 +37,7 @@ python tools/train.py \
     data.scene_idx=$SCENE_IDX \
     data.start_timestep=0 \
     data.end_timestep=-1 \
-    data.data_root=$WORKSPACE/data/drivestudio_nuscenes \
+    data.data_root=$NUSCENES_PROCESSED \
     2>&1 | tee $WORKSPACE/data/train_omnire_v1.log
 
 echo "================================================================="
