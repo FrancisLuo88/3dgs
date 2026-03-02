@@ -1,0 +1,26 @@
+# 3DGS / nerfstudio 训练参数（Phase 2.x）
+# 2080S 8GB 显存优化配置
+
+reconstruction:
+  # nerfstudio 训练方法（splatfacto = 3D Gaussian Splatting）
+  method: splatfacto
+
+  # 最大训练步数
+  max_num_iterations: 30000
+
+  # 图像下采样比例（1.0=原始 1600×900，0.5=800×450）
+  # 2080S 8G 建议 0.5，可显著降低显存占用
+  image_scale: 0.5
+
+  # nerfstudio 数据加载 batch size（3DGS 通常 1）
+  batch_size: 1
+
+  # 每隔多少步保存一次 checkpoint（用于断点续传）
+  save_checkpoint_every: 2000
+
+  # 显存软上限（GB）；超限时 nerfstudio 会自动降低高斯球数量
+  max_gpu_memory_gb: 6.0
+
+  # 输出 MCAP 方向的渲染分辨率（Phase 3 使用，需与输入保持一致或适当下采样）
+  render_width: 1600
+  render_height: 900

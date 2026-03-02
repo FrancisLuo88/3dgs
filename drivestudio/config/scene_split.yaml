@@ -1,0 +1,17 @@
+# 场景划分策略（Phase 2.4 / 2.6）
+
+scene_split:
+  # 划分模式：time（按时间间隔）或 distance（按行驶距离，Phase 2 预留）
+  mode: time
+
+  # time 模式：每个 scene 的最大时长（秒）
+  # nuScenes mini 每个 raw scene 约 19 秒，设为 20 表示不切分
+  # 若处理更长序列（如 nuScenes full），可设为 20 或 30
+  interval_sec: 20
+
+  # 最少帧数：sub-scene 不足此帧数时合并到上一 scene
+  # 防止产生极短 scene（帧数太少无法重建 3DGS）
+  min_frames: 50
+
+  # distance 模式预留（当前不生效）
+  interval_m: 50

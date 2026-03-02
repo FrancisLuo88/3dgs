@@ -1,0 +1,45 @@
+# 数据与中间结果（保留目录结构，忽略内容）
+data/input/*
+!data/input/.gitkeep
+data/output/*
+!data/output/.gitkeep
+data/checkpoints/*
+!data/checkpoints/.gitkeep
+data/intermediate/**/*
+!data/intermediate/stage1_timeline/.gitkeep
+!data/intermediate/stage2_3dgs/.gitkeep
+!data/intermediate/stage3_rendered/.gitkeep
+!data/intermediate/stage4_composite/.gitkeep
+data/drivestudio_nuscenes/
+data/scenes/scene-0061_s0_v12/
+drivestudio/
+data/smpl_data
+data/smpl_data_v12/
+
+.cursor/
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# IDE / 系统
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# 大文件与模型
+*.bag
+*.pth
+*.ckpt
+*.ply
+
+

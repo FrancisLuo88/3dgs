@@ -1,0 +1,1 @@
+# ICheckpointManager（Registry、ResumePoint）
