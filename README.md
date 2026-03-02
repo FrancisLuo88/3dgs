@@ -2,6 +2,12 @@
 
 从晴天**多路相机日志**（**MCAP** 为主输入，nuScenes2mcap）→ 3DGS 重建 → 雨夜重渲染 + 动态虚拟车辆 → 时间戳严格对齐的合成结果；输出 **MCAP**，可选经 Stage 5b 转为 **ROS Bag**。支持 6/7 路同步播放与断点续传。
 
+### 3D Gaussian Splatting 实时渲染演示
+<video width="800" controls autoplay muted loop>
+  <source src="data/assets/videos_eval/full_set_40000_rgbs.mp4" type="video/mp4">
+  你的浏览器不支持视频播放，请下载查看：[full_set_40000_rgbs.mp4](data/assets/videos_eval/full_set_40000_rgbs.mp4)
+</video>
+
 ## 文档与架构
 
 - **[架构与开发计划](docs/architecture/autonomous_driving_synthetic_data_factory_architecture.md)**：数据流、内存与断点、抽象类、Phase 0～6
