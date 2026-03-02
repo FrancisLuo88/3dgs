@@ -18,7 +18,7 @@ export MAX_JOBS=2
 
 cd $DRIVESTUDIO_DIR
 
-SCENE_IDX=000   # scene-0061 is the first scene in mini
+SCENE_IDX=001   # scene-0061 is the first scene in mini
 OUTPUT_ROOT=$WORKSPACE/data/checkpoints/omnire
 RUN_NAME=scene-0061_omnire_v1
 
